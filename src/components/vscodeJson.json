@@ -1,0 +1,41 @@
+{
+  "editor.tabSize": 2,
+  // 不檢查縮進，保存后統一按設置項來設置
+  "editor.detectIndentation": false,
+  //保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // 字體大小
+  "editor.fontSize": 16,
+  // 設置行高
+  "editor.lineHeight": 24,
+  // 主題
+  // "workbench.colorTheme": "Visual Studio Light",
+  // 左側工具欄是否可見
+  "workbench.activityBar.visible": true,
+  // 控制何时自动保存已更新文件。接受的值: "off"、"afterDelay"、"onFocusChange" (编辑器失去焦点)、"onWindowChange" (窗口失去焦点)。如果设置为 "afterDelay"，可在 "files.autoSaveDelay" 中配置延迟时间。
+  "files.autoSave": "onWindowChange",
+  // "files.autoSaveDelay": 3000,
+  // 去掉代码结尾的分号
+  "prettier.semi": false,
+  // 使用带引号替代双引号
+  "prettier.singleQuote": true,
+  // 启用后，按下 TAB 键，将展开 Emmet 缩写。
+  "emmet.triggerExpansionOnTab": true,
+  // js設置單引號
+  "javascript.preferences.quoteStyle": "single",
+  // 让函数(名)和后面的括号之间加个空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  //没有下边这个 上边不生效
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // html格式化
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  // vue组件中html代码格式化样式
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-aligned"
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
