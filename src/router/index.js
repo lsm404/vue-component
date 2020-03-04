@@ -10,6 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/index'
+    },
+    {
+      path: '/index',
       name: 'Index',
       component: Index,
       children: [
@@ -20,10 +24,15 @@ export default new Router({
         },
         {
           path: 'sku',
-          name: 'sku规格组件',
+          name: 'sku',
           component: Sku
         }
       ]
     }
   ]
 })
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
