@@ -68,6 +68,7 @@ export default {
     background: none;
     width: 100%;
   }
+  // 导航激活和选中状态
   .el-menu-item:focus,.el-menu-item:hover {
     color: rgba(0, 0, 250, 1) !important;
     background: none !important;
@@ -76,6 +77,7 @@ export default {
 </style>
 
 <style>
+  /* 导航激活和选中状态 */
   .el-submenu__title:focus,.el-submenu__title:hover {
     color: rgba(0, 0, 250, 1) !important;
     background: none !important;
