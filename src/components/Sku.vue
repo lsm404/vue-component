@@ -204,6 +204,10 @@ export default {
         this.$message('只能添加三个规格')
         return
       }
+      if (this.firstValMount <= 0) {
+        this.$message('请先添加上面规格')
+        return
+      }
       this.secValMount++
       this.secondType.push({})
       this.secondResult.push({})
@@ -223,6 +227,10 @@ export default {
         this.$message('只能添加三个规格')
         return
       }
+      if (this.secValMount <= 0) {
+        this.$message('请先添加上面规格')
+        return
+      }
       this.thrValMount++
       this.thirdType.push({})
       this.thirdResult.push({})
@@ -230,6 +238,7 @@ export default {
     removeThiType (val) {
       this.thirdType.splice(val, 1)
       this.grandson.type.splice(val, 1)
+      this.thrValMount--
     },
     addTypeThiList (item, value) {
       if (value) {
@@ -303,6 +312,8 @@ export default {
   input {
     background: rgba(0, 0, 250, 0.8) !important;
     border: none;
+    color: rgba(250,250,250,0.5);
+    text-align: center;
   }
   .specification-content {
     min-width: 500px;
