@@ -38,6 +38,8 @@ export default new Router({
   ]
 })
 
+// 如果你的改了push还是没有生效，可以考虑改replace方法
+// 修改路由replace方法,阻止重复点击报错
 const originalPush = Router.prototype.push
 Router.prototype.push = function push (location) {
   return originalPush.call(this, location).catch(err => err)
