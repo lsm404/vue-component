@@ -1,32 +1,30 @@
 <template>
   <div class="menu">
     <el-col :span="12">
-      <el-menu default-active="2"
+      <el-menu
+              background-color="rgba(0,250,0,0)"
                class="el-menu-vertical-demo"
+               text-color="rgba(250,250,250,0.5)"
                @open="handleOpen"
                @close="handleClose"
-               background-color="#545c64"
-               text-color="#fff"
-               active-text-color="#ffd04b">
+               active-text-color="#ff0">
         <el-submenu index="1">
           <template slot="title">
-            <i class="el-icon-location"></i>
             <span>导航一</span>
           </template>
-          <el-menu-item index="1-4"
-                        @click="toSku">Sku</el-menu-item>
+          <el-menu-item-group>
+            <el-menu-item index="1-1" @click="toSku">sku</el-menu-item>
+            <el-menu-item index="1-2" @click="tostar">star</el-menu-item>
+          </el-menu-item-group>
         </el-submenu>
         <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
         </el-menu-item>
         <el-menu-item index="3"
                       disabled>
-          <i class="el-icon-document"></i>
           <span slot="title">导航三</span>
         </el-menu-item>
         <el-menu-item index="4">
-          <i class="el-icon-setting"></i>
           <span slot="title">导航四</span>
         </el-menu-item>
       </el-menu>
@@ -43,8 +41,13 @@ export default {
   methods: {
     handleOpen (key, keyPath) {
     },
+    // 跳转sku组件
     toSku () {
       this.$router.push('/index/sku')
+    },
+    // 跳转星星canvas组件
+    tostar () {
+      this.$router.push('/index/star')
     },
     handleClose (key, keyPath) {
       console.log(key, keyPath)
@@ -61,5 +64,20 @@ export default {
   .el-col-12 {
     width: 100%;
   }
+  .el-menu {
+    background: none;
+    width: 100%;
+  }
+  .el-menu-item:focus,.el-menu-item:hover {
+    color: rgba(0, 0, 250, 1) !important;
+    background: none !important;
+  }
 }
+</style>
+
+<style>
+  .el-submenu__title:focus,.el-submenu__title:hover {
+    color: rgba(0, 0, 250, 1) !important;
+    background: none !important;
+  }
 </style>

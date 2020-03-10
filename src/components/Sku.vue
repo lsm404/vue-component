@@ -299,10 +299,14 @@ export default {
 .specification {
   display: flex;
   justify-content: center;
+  color: rgba(250,250,250,0.5);
+  input {
+    background: rgba(0, 0, 250, 0.8) !important;
+    border: none;
+  }
   .specification-content {
     min-width: 500px;
     height: 800px;
-    background: rgba(250, 250, 250, 0.8);
     .specification-title {
       margin-bottom: 20px;
     }
