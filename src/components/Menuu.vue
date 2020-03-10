@@ -10,7 +10,7 @@
                active-text-color="#ff0">
         <el-submenu index="1">
           <template slot="title">
-            <span>导航一</span>
+            <span>一库</span>
           </template>
           <el-menu-item-group>
             <el-menu-item index="1-1" @click="toSku">sku</el-menu-item>
@@ -18,14 +18,14 @@
           </el-menu-item-group>
         </el-submenu>
         <el-menu-item index="2">
-          <span slot="title">导航二</span>
+          <span slot="title">未开放</span>
         </el-menu-item>
         <el-menu-item index="3"
                       disabled>
-          <span slot="title">导航三</span>
+          <span slot="title">未开放</span>
         </el-menu-item>
         <el-menu-item index="4">
-          <span slot="title">导航四</span>
+          <span slot="title">未开放</span>
         </el-menu-item>
       </el-menu>
     </el-col>
