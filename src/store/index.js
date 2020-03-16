@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    test: 0
+    test: 1
   },
   getters: {
     title: state => state.test
