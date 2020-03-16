@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Sku from '@/components/Sku'
 import Stars from '@/components/stars'
 import Index from '@/view/index'
+import Vuex from '@/components/vuex'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
           path: 'star',
           name: 'Star',
           component: Stars
+        },
+        {
+          path: 'vuex',
+          name: 'Vuex',
+          component: Vuex
         }
       ]
     }

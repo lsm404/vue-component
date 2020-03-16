@@ -49,6 +49,7 @@ export default {
     left: 50%;
     margin-left: -600px;
     padding-top: 100px;
+    text-align: center;
     .to-index {
       position: fixed;
       top: 50px;

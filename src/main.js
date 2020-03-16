@@ -6,6 +6,7 @@ import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import element from './element/index.js'
 import './assets/css/reset.css'
+import store from './store'
 
 Vue.config.productionTip = false
 Vue.use(element)
@@ -14,6 +15,7 @@ Vue.use(element)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
