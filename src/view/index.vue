@@ -34,8 +34,7 @@ export default {
 
     // 切换语言
     changeLanguage () {
-      let lang = localStorage.getItem('locale') || 'zh-CN'
-
+      let lang = sessionStorage.getItem('locale') || 'zh-CN'
       if (lang === 'zh-CN') {
         lang = 'en-US'
         this.$i18n.locale = lang
@@ -43,7 +42,7 @@ export default {
         lang = 'zh-CN'
         this.$i18n.locale = lang
       }
-      localStorage.setItem('locale', lang)
+      sessionStorage.setItem('locale', lang)
     }
   },
   components: {

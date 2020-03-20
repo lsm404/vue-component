@@ -1,5 +1,6 @@
 
 import enLocale from 'element-ui/lib/locale/lang/en'
+
 export const m = {
   nav: {
     HITOKURA: 'HITOKURA',
