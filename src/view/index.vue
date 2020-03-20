@@ -12,6 +12,12 @@
                   @click="toIndex"
                   circle></el-button>
       </div>
+      <div class="chang-language">
+        <el-button type="warning"
+                  icon="el-icon-star-off"
+                  @click="changeLanguage"
+                  circle></el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +30,20 @@ export default {
   methods: {
     toIndex () {
       this.$router.push('/')
+    },
+
+    // 切换语言
+    changeLanguage () {
+      let lang = localStorage.getItem('locale') || 'zh-CN'
+
+      if (lang === 'zh-CN') {
+        lang = 'en-US'
+        this.$i18n.locale = lang
+      } else {
+        lang = 'zh-CN'
+        this.$i18n.locale = lang
+      }
+      localStorage.setItem('locale', lang)
     }
   },
   components: {
@@ -53,6 +73,11 @@ export default {
     .to-index {
       position: fixed;
       top: 50px;
+      right: 20px;
+    }
+    .chang-language {
+      position: fixed;
+      top: 100px;
       right: 20px;
     }
   }

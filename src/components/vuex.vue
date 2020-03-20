@@ -20,7 +20,7 @@ export default {
     // font-size: 500px;
     .star{
         width:0px;height:0px;
-        border-bottom:70px solid rgba(250,250,0,1);
+        border-bottom:70px solid rgba(0,0,250,0.5);
         border-left:100px solid transparent;
         border-right:100px solid transparent;
         margin:100px auto;
@@ -35,7 +35,7 @@ export default {
           content:"";
         width:0px;
         height:0px;
-        border-bottom:70px solid rgba(250,250,0,1);
+        border-bottom:70px solid rgba(0,0,250,0.5);
         border-left:30px solid transparent;
         border-right:30px solid transparent;
         /*伪类所添加的内容继承原来的样式也发生了顺时针旋转*/
@@ -53,7 +53,7 @@ export default {
           width:0px;
           height:0px;
           position:absolute;
-          border-bottom:70px solid rgba(250,250,0,1);
+          border-bottom:70px solid rgba(0,0,250,0.5);
           border-left:100px solid transparent;
           border-right:100px solid transparent;
           -webkit-transform: rotate(-70deg);

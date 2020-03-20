@@ -1,16 +1,16 @@
 <template>
   <div class="specification">
     <div class="specification-content">
-      <div class="specification-title">商品库存</div>
+      <div class="specification-title">{{$t('m.sku.GCOUNT')}}</div>
       <!-- 第一个规格配置 -->
       <div class="create-type">
         <div>
-          <span>规格名</span>
+          <span>{{$t('m.sku.DESCRIPTION')}}</span>
           <input v-model="firstpecifiy"
                  type="text" />
         </div>
         <div class="specification-value">
-          <p class="value-title">规格值</p>
+          <p class="value-title">{{$t('m.sku.SPECIFICATIONS')}}</p>
           <div v-for="(item, index) in firstType"
                :key="index"
                class="value-con">
@@ -21,19 +21,19 @@
                @click="removeType(index)"></i>
           </div>
           <div @click="addFirstType"
-               class="addValue">添加规格值</div>
+               class="addValue">{{$t('m.sku.ADDSPECVALUE')}}</div>
         </div>
       </div>
 
       <!-- 第二个规格配置 -->
       <div class="create-type">
         <div>
-          <span>规格名</span>
+          <span>{{$t('m.sku.DESCRIPTION')}}</span>
           <input v-model="secondpecifiy"
                  type="text" />
         </div>
         <div class="specification-value">
-          <p class="value-title">规格值</p>
+          <p class="value-title">{{$t('m.sku.SPECIFICATIONS')}}</p>
           <div v-for="(item, index) in secondType"
                :key="index"
                class="value-con">
@@ -44,19 +44,19 @@
                @click="removeSecType(index)"></i>
           </div>
           <div @click="addSecType"
-               class="addValue">添加规格值</div>
+               class="addValue">{{$t('m.sku.ADDSPECVALUE')}}</div>
         </div>
       </div>
 
       <!-- 第三个规格配置 -->
       <div class="create-type">
         <div>
-          <span>规格名</span>
+          <span>{{$t('m.sku.DESCRIPTION')}}</span>
           <input v-model="thirdpecifiy"
                  type="text" />
         </div>
         <div class="specification-value">
-          <p class="value-title">规格值</p>
+          <p class="value-title">{{$t('m.sku.SPECIFICATIONS')}}</p>
           <div v-for="(item, index) in thirdType"
                :key="index"
                class="value-con">
@@ -67,7 +67,7 @@
                @click="removeThiType(index)"></i>
           </div>
           <div @click="addThiType"
-               class="addValue">添加规格值</div>
+               class="addValue">{{$t('m.sku.ADDSPECVALUE')}}</div>
         </div>
       </div>
 
@@ -81,9 +81,9 @@
             <div class="first-type style-comment"
                  v-if="grandson.type.length">{{thirdpecifiy}}</div>
             <div class="first-type style-comment"
-                 v-if="father.type.length">价格</div>
+                 v-if="father.type.length">{{$t('m.sku.PRICE')}}</div>
             <div class="first-type style-comment"
-                 v-if="father.type.length">库存</div>
+                 v-if="father.type.length">{{$t('m.sku.REPERTORY')}}</div>
           </div>
           <div class="type-value"
                v-for="(item, index) in father.type"
@@ -182,7 +182,7 @@ export default {
   methods: {
     addFirstType () {
       if (this.firstValMount === 3) {
-        this.$message('只能添加三个规格')
+        this.$message(this.$t('m.dialog.SKUTIP'))
         return
       }
       this.firstValMount++
@@ -190,6 +190,7 @@ export default {
       this.firstResult.push({})
     },
     removeType (val) {
+      this.firstValMount--
       this.firstType.splice(val, 1)
       this.father.type.splice(val, 1)
     },
@@ -201,11 +202,11 @@ export default {
     },
     addSecType () {
       if (this.secValMount === 3) {
-        this.$message('只能添加三个规格')
+        this.$message(this.$t('m.dialog.SKUTIP'))
         return
       }
       if (this.firstValMount <= 0) {
-        this.$message('请先添加上面规格')
+        this.$message(this.$t('m.dialog.OTHERSKUTIP'))
         return
       }
       this.secValMount++
@@ -213,6 +214,7 @@ export default {
       this.secondResult.push({})
     },
     removeSecType (val) {
+      this.secValMount--
       this.secondType.splice(val, 1)
       this.son.type.splice(val, 1)
     },
@@ -224,11 +226,11 @@ export default {
     },
     addThiType () {
       if (this.thrValMount === 3) {
-        this.$message('只能添加三个规格')
+        this.$message(this.$t('m.dialog.SKUTIP'))
         return
       }
       if (this.secValMount <= 0) {
-        this.$message('请先添加上面规格')
+        this.$message(this.$t('m.dialog.OTHERSKUTIP'))
         return
       }
       this.thrValMount++
@@ -236,6 +238,7 @@ export default {
       this.thirdResult.push({})
     },
     removeThiType (val) {
+      this.thrValMount--
       this.thirdType.splice(val, 1)
       this.grandson.type.splice(val, 1)
       this.thrValMount--
