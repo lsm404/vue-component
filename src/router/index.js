@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Sku from '@/components/Sku'
-import Stars from '@/components/stars'
-import Index from '@/view/index'
-import Vuex from '@/components/vuex'
-import Debounce from '@/components/Debounce'
+// import HelloWorld from '@/components/HelloWorld'
+const HelloWorld = import('@/components/HelloWorld')
+const Sku = import('@/components/Sku')
+const Stars = import('@/components/stars')
+const Index = import('@/view/index')
+const Debounce = import('@/components/Debounce')
+const Vuex = import('@/components/Vuex')
 
 Vue.use(Router)
 
