@@ -11,6 +11,7 @@ export const debounce = (fn, delay) => {
     }, delay)
   }
 }
+
 // 节流 - throttle 当持续触发事件时，保证一定时间段内只调用一次事件处理函数。
 export const throttle = (fn, delay = 500) => {
   let flag = true
@@ -23,6 +24,7 @@ export const throttle = (fn, delay = 500) => {
     }, delay)
   }
 }
+
 // 近几天
 export const nearFutureDays = num => {
   let time = new Date()
@@ -30,6 +32,7 @@ export const nearFutureDays = num => {
   let timeList = new Date(time)
   return timeList
 }
+
 // 未来几天
 export const FutureDays = (arg, num) => {
   let time = new Date(arg)
@@ -37,6 +40,7 @@ export const FutureDays = (arg, num) => {
   let timeList = new Date(time)
   return timeList
 }
+
 export const setCookie = (name, value, day) => {
   var setting = arguments[1]
   if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object') {
@@ -51,6 +55,7 @@ export const setCookie = (name, value, day) => {
     document.cookie = name + '=' + value + ';expires=' + oDate
   }
 }
+
 export const getCookie = (name) => {
   var arr = document.cookie.split('; ')
   for (var i = 0; i < arr.length; i++) {
@@ -61,6 +66,7 @@ export const getCookie = (name) => {
   }
   return ''
 }
+
 /**
  * 接口时间格式化
  * @param  {[Date]}  time  [description]
@@ -72,6 +78,7 @@ export const dataFormat = (time) => {
   let day = (time.getDate() < 10 ? '0' : '') + time.getDate()
   return year + '-' + month + '-' + day
 }
+
 // 时间格式化
 export const timeFormart = (time) => {
   let year = time.getFullYear()
@@ -82,6 +89,7 @@ export const timeFormart = (time) => {
   let second = (time.getSeconds() < 10 ? '0' : '') + time.getSeconds()
   return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
 }
+
 // 时间格式化
 export const timeFormartNohour = (time) => {
   let year = time.getFullYear()
@@ -89,6 +97,7 @@ export const timeFormartNohour = (time) => {
   let day = (time.getDate() < 10 ? '0' : '') + time.getDate()
   return year + '-' + month + '-' + day
 }
+
 // 获取基于当天的前几天和后几天, 返回二维数组，分别是年月日和时分秒
 export const getDateTime = (day, pos, monthAdd) => {
   /**
@@ -118,12 +127,14 @@ export const getDateTime = (day, pos, monthAdd) => {
   ]
   return allDate
 }
+
 export const GetDateDiff = (startDate, endDate) => {
   var startTime = new Date(startDate).getTime()
   var endTime = new Date(endDate).getTime()
   var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24)
   return dates
 }
+
 export const getPageSize = (count, size) => {
   let pageNum = 0
   if (count > 0) {
@@ -134,6 +145,7 @@ export const getPageSize = (count, size) => {
   }
   return pageNum
 }
+
 // 判断对象是否完全相等
 export const objMatch = (x, y) => {
   if (x === y) {
@@ -168,6 +180,7 @@ export const objMatch = (x, y) => {
   }
   return true
 }
+
 // 获取字符串真实长度(中文两个字符,英文一个字符)
 export const getStrLength = (str) => {
   if (str == null) return 0
@@ -175,12 +188,14 @@ export const getStrLength = (str) => {
   // eslint-disable-next-line no-control-regex
   return str.replace(/[^\x00-\xff]/g, '01').length
 }
+
 // base64解码
 export const b64EncodeUnicode = (str) => {
   return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
     return String.fromCharCode('0x' + p1)
   }))
 }
+
 // base64编码
 export const b64DecodeUnicode = (str) => {
   return decodeURIComponent(atob(str).split('').map(function (c) {
