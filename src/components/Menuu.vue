@@ -34,12 +34,14 @@
 </template>
 
 <script>
+import { debounce } from '@/units.js'
 export default {
   name: 'menuu',
   data () {
     return {}
   },
   methods: {
+    debounce,
     handleOpen (key, keyPath) {
     },
     // 跳转sku组件
