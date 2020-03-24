@@ -5,6 +5,7 @@ import Sku from '@/components/Sku'
 import Stars from '@/components/stars'
 import Index from '@/view/index'
 import Vuex from '@/components/vuex'
+import Debounce from '@/components/Debounce'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
           path: 'vuex',
           name: 'Vuex',
           component: Vuex
+        },
+        {
+          path: 'debounce',
+          name: 'Debounce',
+          component: Debounce
         }
       ]
     }
