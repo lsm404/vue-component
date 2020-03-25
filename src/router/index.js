@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-const HelloWorld = import('@/components/HelloWorld')
-const Sku = import('@/components/Sku')
-const Stars = import('@/components/stars')
-const Index = import('@/view/index')
-const Debounce = import('@/components/Debounce')
-const Vuex = import('@/components/Vuex')
+// const HelloWorld = import('@/components/HelloWorld')
+// const Sku = import('@/components/Sku')
+// const Stars = import('@/components/stars')
+// const Index = import('@/view/index')
+// const Debounce = import('@/components/Debounce')
+// const Vuex = import('@/components/Vuex')
 
 Vue.use(Router)
 
@@ -19,32 +19,32 @@ export default new Router({
     {
       path: '/index',
       name: 'Index',
-      component: Index,
+      component: resolve => require(['@/view/index'], resolve),
       children: [
         {
           path: 'hello',
           name: 'hello',
-          component: HelloWorld
+          component: resolve => require(['@/components/HelloWorld'], resolve)
         },
         {
           path: 'sku',
           name: 'sku',
-          component: Sku
+          component: resolve => require(['@/components/Sku'], resolve)
         },
         {
           path: 'star',
           name: 'Star',
-          component: Stars
+          component: resolve => require(['@/components/stars'], resolve)
         },
         {
           path: 'vuex',
           name: 'Vuex',
-          component: Vuex
+          component: resolve => require(['@/components/Vuex'], resolve)
         },
         {
           path: 'debounce',
           name: 'Debounce',
-          component: Debounce
+          component: resolve => require(['@/components/Debounce'], resolve)
         }
       ]
     }
