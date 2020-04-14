@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>掘金面试总结附所有链接{{ msg }}</h1>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'https://juejin.im/post/5e8b163ff265da47ee3f54a6'
     }
   },
   methods: {
