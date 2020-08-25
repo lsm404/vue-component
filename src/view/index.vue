@@ -1,7 +1,7 @@
 <template>
   <div class="body-screen">
     <div class="star-back">
-      <Star />
+      <!-- <Star /> -->
     </div>
     <div class="content">
       <Menu></Menu>
@@ -57,12 +57,12 @@ export default {
     }
   },
   created () {
-    setTimeout(()=>{
+    setTimeout(() => {
       console.log(this.age)
       this.age++
     }, 0)
   },
-  mounted() {
+  mounted () {
     console.log(this.age)
   },
   components: {

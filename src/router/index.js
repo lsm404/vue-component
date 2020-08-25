@@ -45,6 +45,11 @@ export default new Router({
           path: 'debounce',
           name: 'Debounce',
           component: resolve => require(['@/components/Debounce'], resolve)
+        },
+        {
+          path: 'recursive',
+          name: 'Recursive',
+          component: resolve => require(['@/components/Recursive'], resolve)
         }
       ]
     }

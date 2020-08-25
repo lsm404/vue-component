@@ -17,6 +17,7 @@
             <el-menu-item index="1-2" @click="tostar">star</el-menu-item>
             <el-menu-item index="1-3" @click="toVuex">vuex</el-menu-item>
             <el-menu-item index="1-3" @click="toDebounce">debounce</el-menu-item>
+            <el-menu-item index="1-3" @click="toMenu">Recursive menu</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-menu-item index="2">
@@ -63,6 +64,11 @@ export default {
     // 跳转防抖节流
     toDebounce () {
       this.$router.push('/index/debounce')
+    },
+
+    //  递归菜单栏
+    toMenu () {
+      this.$router.push('/index/Recursive')
     }
   }
 }
