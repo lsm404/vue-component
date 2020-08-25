@@ -27,6 +27,12 @@ import Menu from '@/components/Menuu'
 import Star from '@/components/stars'
 export default {
   name: 'index',
+  data () {
+    return {
+      name: 'vue',
+      age: 4
+    }
+  },
   methods: {
     toIndex () {
       this.$router.push('/')
@@ -44,6 +50,20 @@ export default {
       }
       sessionStorage.setItem('locale', lang)
     }
+  },
+  watch: {
+    age () {
+      console.log(this.age)
+    }
+  },
+  created () {
+    setTimeout(()=>{
+      console.log(this.age)
+      this.age++
+    }, 0)
+  },
+  mounted() {
+    console.log(this.age)
   },
   components: {
     Menu,
