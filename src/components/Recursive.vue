@@ -1,5 +1,5 @@
 <template>
-  <recursive-menu :data="data"  @change="activeIdsChange" />
+  <recursive-menu :data="data" :depth="0"  @change="activeIdsChange" />
 </template>
 
 <script>
