@@ -85,11 +85,11 @@ export default {
       prize: 0, // 中奖位置，接口返回
       number_of_draws: 20,//限制每天抽奖次数，接口返回
       prize_data: {//中奖信息
-        id:Number,//奖品ID
+        id: Number,//奖品ID
         name:'',//奖品名称
-        number:Number,//奖品数量
+        number: Number,//奖品数量
         image:'',//奖品图片
-        type:Number,// 奖品类型
+        type: Number,// 奖品类型
       },
     }
   },
@@ -143,7 +143,7 @@ export default {
 
     usePrize() {
         // 如果当前转动次数达到要求 && 目前转到的位置是中奖位置
-        if (this.times > this.cycle +10 && this.prize === this.index) {
+        if (this.times > this.cycle + 10 && this.prize === this.index) {
             clearTimeout(this.timer); // 清除转动定时器
             clearTimeout(this.lamp); // 清除灯光定时器
             this.lampShow = false; // 白色灯隐藏
@@ -186,18 +186,20 @@ export default {
       height: 326px;
       margin: 150px auto 0;
       border-radius: 8px;
-      background: url(https://seopic.699pic.com/photo/50062/8783.jpg_wh1200.jpg)no-repeat left top;
+      background: url(https://seopic.699pic.com/photo/50062/8783.jpg_wh1200.jpg) no-repeat left top;
       background-size: 326px 326px;
       position: relative;
+
       .bg1 {
         position: absolute;
         left: 4.5px;
         top: 4px;
         width: 317px;
         height: 317px;
-        background: url(https://seopic.699pic.com/photo/50046/0542.jpg_wh1200.jpg)no-repeat center;
+        background: url(https://seopic.699pic.com/photo/50046/0542.jpg_wh1200.jpg) no-repeat center;
         background-size: 317px 317px;
       }
+
       .bg2 {
         position: absolute;
         left: 4.5px;
@@ -207,14 +209,16 @@ export default {
         background: url(https://seopic.699pic.com/photo/40150/3529.jpg_wh1200.jpg) no-repeat center;
         background-size: 317px 317px;
       }
+
       .start {
         position: relative;
         // margin-top: 70px;
         padding-top: 70px;
         width: 86px;
         height: 86px;
-        background: url(~@/assets/logo.png) no-repeat center;
+        background: url(~@/assets/img/car.jpg) no-repeat center;
         background-size: 86px 86px;
+
         p {
           text-align: center;
           font-size: 12px;
@@ -222,7 +226,9 @@ export default {
           color: rgba(255, 255, 255, 1);
         }
       }
+
       ul {
+
         li {
           position: absolute;
           width: 86px;
@@ -230,15 +236,18 @@ export default {
           background: rgba(255, 255, 255, 1);
           border: 2px solid rgba(227, 161, 0, 1);
           border-radius: 8px;
+
           .img1 {
             margin: 15px auto 3px;
             width: 35px;
             height: 35px;
+
             img {
                 width: 100%;
                 height: auto;
             }
           }
+
           p {
             text-align: center;
             font-size: 13px;
