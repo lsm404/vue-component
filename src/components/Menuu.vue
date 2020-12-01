@@ -16,8 +16,9 @@
             <el-menu-item index="1-1" @click="toSku">sku</el-menu-item>
             <el-menu-item index="1-2" @click="tostar">star</el-menu-item>
             <el-menu-item index="1-3" @click="toVuex">vuex</el-menu-item>
-            <el-menu-item index="1-3" @click="toDebounce">debounce</el-menu-item>
-            <el-menu-item index="1-3" @click="toMenu">Recursive menu</el-menu-item>
+            <el-menu-item index="1-4" @click="toDebounce">debounce</el-menu-item>
+            <el-menu-item index="1-5" @click="toMenu">Recursive menu</el-menu-item>
+            <el-menu-item index="1-6" @click="toMarquee">marquee</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-menu-item index="2">
@@ -69,6 +70,11 @@ export default {
     //  递归菜单栏
     toMenu () {
       this.$router.push('/index/Recursive')
+    },
+
+    //  跑马灯抽奖
+    toMarquee() {
+      this.$router.push('/index/marquee')
     }
   }
 }

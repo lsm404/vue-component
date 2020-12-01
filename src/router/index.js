@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/index'
+      redirect: '/vuex'
     },
     {
       path: '/index',
@@ -50,6 +50,11 @@ export default new Router({
           path: 'recursive',
           name: 'Recursive',
           component: resolve => require(['@/components/Recursive'], resolve)
+        },
+        {
+          path: 'marquee',
+          name: 'Marquee',
+          component: resolve => require(['@/components/marquee'], resolve)
         }
       ]
     }
