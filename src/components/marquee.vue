@@ -118,6 +118,7 @@ export default {
         }
         this.startRoll();//执行抽奖
 
+        // 这里的背景图闪烁定时器与抽奖速度不同步就先隐藏了
         // this.lamp = setInterval(()=>{//灯光闪烁开启
         //     this.lampShow = !this.lampShow;
         // },500)
