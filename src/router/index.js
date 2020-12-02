@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/vuex'
+      redirect: '/index/vuex'
     },
     {
       path: '/index',

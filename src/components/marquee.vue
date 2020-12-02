@@ -96,72 +96,72 @@ export default {
   methods: {
      //点击开始抽奖
     move() {
-        if( this.number_of_draws == 0){
-          this.$message({
-            message: '今日抽奖次数已用完,明天再来吧',
-            type: 'warning'
-          });
-        }else if(this.times != 0){
-          this.$message({
-            message: '正在抽奖中，请勿重复点击',
-            type: 'warning'
-          });
-        } else{
-          this.number_of_draws--;//抽奖开始，次数-1
-          this.speed = 200;//每次抽奖速度初始化为200
-          this.prize_data = {
-            id: 5,//奖品ID
-            name:'奖项5',//奖品名称
-            number:20,//奖品数量
-            image:'https://seopic.699pic.com/photo/40162/9565.jpg_wh1200.jpg',//奖品图片
-            type:1,// 奖品类型
-          }
-          this.startRoll();//执行抽奖
-          this.lamp = setInterval(()=>{//灯光闪烁开启
-              this.lampShow = !this.lampShow;
-          },500)
-          this.prize = this.prize_data.id - 1; //  中奖位置赋值，跑马灯最终停留位置，这里实际位置需要-1
+      if( this.number_of_draws == 0){
+        this.$message({
+          message: '今日抽奖次数已用完,明天再来吧',
+          type: 'warning'
+        });
+      }else if(this.times != 0){
+        this.$message({
+          message: '正在抽奖中，请勿重复点击',
+          type: 'warning'
+        });
+      } else{
+        this.number_of_draws--;//抽奖开始，次数-1
+        this.speed = 200;//每次抽奖速度初始化为200
+        this.prize_data = {
+          id: 5,//奖品ID
+          name:'奖项5',//奖品名称
+          number:20,//奖品数量
+          image:'https://seopic.699pic.com/photo/40162/9565.jpg_wh1200.jpg',//奖品图片
+          type:1,// 奖品类型
         }
+        this.startRoll();//执行抽奖
+        this.lamp = setInterval(()=>{//灯光闪烁开启
+            this.lampShow = !this.lampShow;
+        },500)
+        this.prize = this.prize_data.id - 1; //  中奖位置赋值，跑马灯最终停留位置，这里实际位置需要-1
+      }
     },
     // 开始转动
     startRoll() {
-        this.times += 1; // 转动次数
-        this.oneRoll(); // 转动过程调用的每一次转动方法，这里是第一次调用初始化
-        this.usePrize();
+      this.times += 1; // 转动次数
+      this.oneRoll(); // 转动过程调用的每一次转动方法，这里是第一次调用初始化
+      this.usePrize();
     },
     
     // 每一次转动
     oneRoll() {
-        let index = this.index; // 当前转动到哪个位置
-        const count = 8; // 总共有多少个位置
-        index += 1;
-        if (index > count - 1) {
-            index = 0;
-        }
-        this.index = index;
+      let index = this.index; // 当前转动到哪个位置
+      const count = 8; // 总共有多少个位置
+      index += 1;
+      if (index > count - 1) {
+          index = 0;
+      }
+      this.index = index;
     },
 
     usePrize() {
-        // 如果当前转动次数达到要求 && 目前转到的位置是中奖位置
-        if (this.times > this.cycle + 10 && this.prize === this.index) {
-            clearTimeout(this.timer); // 清除转动定时器
-            clearTimeout(this.lamp); // 清除灯光定时器
-            this.lampShow = false; // 白色灯隐藏
-            this.times = 0; // 转动跑格子次数初始化为0，可以开始下次抽奖
-            
-            if(this.prize_data.type == 0){
-                console.log('未中奖，谢谢参与');//未中奖提示弹出，
-            }else{
-                console.log('中奖啦');//中奖弹出提示
-            }
-        } else {
-            if(this.times < this.cycle -20){
-                this.speed -= 20; // 加快转动速度
-            }else{
-                this.speed += 20; // 抽奖即将结束，放慢转动速度
-            }
-            this.timer = setTimeout(this.startRoll, this.speed);//开始转动
-        }
+      // 如果当前转动次数达到要求 && 目前转到的位置是中奖位置
+      if (this.times > this.cycle + 10 && this.prize === this.index) {
+          clearTimeout(this.timer); // 清除转动定时器
+          clearTimeout(this.lamp); // 清除灯光定时器
+          this.lampShow = false; // 白色灯隐藏
+          this.times = 0; // 转动跑格子次数初始化为0，可以开始下次抽奖
+          
+          if(this.prize_data.type == 0){
+              console.log('未中奖，谢谢参与');//未中奖提示弹出，
+          }else{
+              console.log('中奖啦');//中奖弹出提示
+          }
+      } else {
+          if(this.times < this.cycle -20){
+              this.speed -= 20; // 加快转动速度
+          }else{
+              this.speed += 20; // 抽奖即将结束，放慢转动速度
+          }
+          this.timer = setTimeout(this.startRoll, this.speed);//开始转动
+      }
     },
   }
 }
