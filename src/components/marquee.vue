@@ -117,9 +117,11 @@ export default {
           type:1,// 奖品类型
         }
         this.startRoll();//执行抽奖
-        this.lamp = setInterval(()=>{//灯光闪烁开启
-            this.lampShow = !this.lampShow;
-        },500)
+
+        // this.lamp = setInterval(()=>{//灯光闪烁开启
+        //     this.lampShow = !this.lampShow;
+        // },500)
+
         this.prize = this.prize_data.id - 1; //  中奖位置赋值，跑马灯最终停留位置，这里实际位置需要-1
       }
     },
@@ -139,13 +141,16 @@ export default {
           index = 0;
       }
       this.index = index;
+      this.lampShow = !this.lampShow;  //  跟随奖品的速度切换背景，灯光闪烁开启
     },
 
     usePrize() {
       // 如果当前转动次数达到要求 && 目前转到的位置是中奖位置
       if (this.times > this.cycle + 10 && this.prize === this.index) {
           clearTimeout(this.timer); // 清除转动定时器
-          clearTimeout(this.lamp); // 清除灯光定时器
+
+          // clearTimeout(this.lamp); // 清除灯光定时器
+
           this.lampShow = false; // 白色灯隐藏
           this.times = 0; // 转动跑格子次数初始化为0，可以开始下次抽奖
           
@@ -158,7 +163,7 @@ export default {
           if(this.times < this.cycle -20){
               this.speed -= 20; // 加快转动速度
           }else{
-              this.speed += 20; // 抽奖即将结束，放慢转动速度
+              this.speed += 15; // 抽奖即将结束，放慢转动速度
           }
           this.timer = setTimeout(this.startRoll, this.speed);//开始转动
       }
